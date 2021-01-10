@@ -25,10 +25,10 @@ namespace catinder.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Cat> Get()
+        public async Task<IEnumerable<Cat>> Get()
         {
-            _catScraperService.ScrapePage("https://www.adoptapet.com/pet-search?clan_id=2&geo_range=50&location=Richardson,%20TX&page=1");
-            return new[] {new Cat {Age = 1, Name = "Hyde"}, new Cat {Age = 1, Name = "Iris"} };
+            var cats = await _catScraperService.ScrapePage("https://www.adoptapet.com/pet-search?clan_id=2&geo_range=50&location=Richardson,%20TX&page=1");
+            return cats;
         }
         
     }
