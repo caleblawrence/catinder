@@ -25,9 +25,12 @@ namespace catinder.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Cat>> Get()
+        public async Task<IEnumerable<Cat>> Get([FromQuery] GetCatsRequest request)
         {
-            var cats = await _catScraperService.ScrapePage("https://www.adoptapet.com/pet-search?clan_id=2&geo_range=50&location=Richardson,%20TX&page=1");
+            // TODO: validate state formatting
+            // TODO: needs to be like TX not `Texas`
+            var apiEndpoint = $"https://www.adoptapet.com/pet-search?clan_id=2&geo_range=50&location={request.City},%20{request.State}&page={request.Page}";
+            var cats = await _catScraperService.ScrapePage(apiEndpoint);
             return cats;
         }
         
