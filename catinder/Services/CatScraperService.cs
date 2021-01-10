@@ -38,7 +38,7 @@ namespace catinder.Services
             await page.WaitForSelectorAsync("div.pet__item");
             const string jsSelectAllAnchors = @"Array.from(document.querySelectorAll('.search__result')).map(a => a.innerHTML);";
             var urls = await page.EvaluateExpressionAsync<string[]>(jsSelectAllAnchors);
-            _logger.LogInformation($"Length: {urls.Count()}");
+
             foreach (var item in urls)
             {
                 var newCat = ParseHtml("<div>" + item + "</div>");
