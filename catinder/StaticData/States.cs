@@ -18,62 +18,64 @@ namespace catinder.StaticData
   static class StateArray
   {
 
-    public static List<State> States;
+    public static readonly List<State> States;
 
     static StateArray()
     {
-      States = new List<State>(50);
-      States.Add(new State("AL", "Alabama"));
-      States.Add(new State("AK", "Alaska"));
-      States.Add(new State("AZ", "Arizona"));
-      States.Add(new State("AR", "Arkansas"));
-      States.Add(new State("CA", "California"));
-      States.Add(new State("CO", "Colorado"));
-      States.Add(new State("CT", "Connecticut"));
-      States.Add(new State("DE", "Delaware"));
-      States.Add(new State("DC", "District Of Columbia"));
-      States.Add(new State("FL", "Florida"));
-      States.Add(new State("GA", "Georgia"));
-      States.Add(new State("HI", "Hawaii"));
-      States.Add(new State("ID", "Idaho"));
-      States.Add(new State("IL", "Illinois"));
-      States.Add(new State("IN", "Indiana"));
-      States.Add(new State("IA", "Iowa"));
-      States.Add(new State("KS", "Kansas"));
-      States.Add(new State("KY", "Kentucky"));
-      States.Add(new State("LA", "Louisiana"));
-      States.Add(new State("ME", "Maine"));
-      States.Add(new State("MD", "Maryland"));
-      States.Add(new State("MA", "Massachusetts"));
-      States.Add(new State("MI", "Michigan"));
-      States.Add(new State("MN", "Minnesota"));
-      States.Add(new State("MS", "Mississippi"));
-      States.Add(new State("MO", "Missouri"));
-      States.Add(new State("MT", "Montana"));
-      States.Add(new State("NE", "Nebraska"));
-      States.Add(new State("NV", "Nevada"));
-      States.Add(new State("NH", "New Hampshire"));
-      States.Add(new State("NJ", "New Jersey"));
-      States.Add(new State("NM", "New Mexico"));
-      States.Add(new State("NY", "New York"));
-      States.Add(new State("NC", "North Carolina"));
-      States.Add(new State("ND", "North Dakota"));
-      States.Add(new State("OH", "Ohio"));
-      States.Add(new State("OK", "Oklahoma"));
-      States.Add(new State("OR", "Oregon"));
-      States.Add(new State("PA", "Pennsylvania"));
-      States.Add(new State("RI", "Rhode Island"));
-      States.Add(new State("SC", "South Carolina"));
-      States.Add(new State("SD", "South Dakota"));
-      States.Add(new State("TN", "Tennessee"));
-      States.Add(new State("TX", "Texas"));
-      States.Add(new State("UT", "Utah"));
-      States.Add(new State("VT", "Vermont"));
-      States.Add(new State("VA", "Virginia"));
-      States.Add(new State("WA", "Washington"));
-      States.Add(new State("WV", "West Virginia"));
-      States.Add(new State("WI", "Wisconsin"));
-      States.Add(new State("WY", "Wyoming"));
+      States = new List<State>(50)
+      {
+        new State("AL", "Alabama"),
+        new State("AK", "Alaska"),
+        new State("AZ", "Arizona"),
+        new State("AR", "Arkansas"),
+        new State("CA", "California"),
+        new State("CO", "Colorado"),
+        new State("CT", "Connecticut"),
+        new State("DE", "Delaware"),
+        new State("DC", "District Of Columbia"),
+        new State("FL", "Florida"),
+        new State("GA", "Georgia"),
+        new State("HI", "Hawaii"),
+        new State("ID", "Idaho"),
+        new State("IL", "Illinois"),
+        new State("IN", "Indiana"),
+        new State("IA", "Iowa"),
+        new State("KS", "Kansas"),
+        new State("KY", "Kentucky"),
+        new State("LA", "Louisiana"),
+        new State("ME", "Maine"),
+        new State("MD", "Maryland"),
+        new State("MA", "Massachusetts"),
+        new State("MI", "Michigan"),
+        new State("MN", "Minnesota"),
+        new State("MS", "Mississippi"),
+        new State("MO", "Missouri"),
+        new State("MT", "Montana"),
+        new State("NE", "Nebraska"),
+        new State("NV", "Nevada"),
+        new State("NH", "New Hampshire"),
+        new State("NJ", "New Jersey"),
+        new State("NM", "New Mexico"),
+        new State("NY", "New York"),
+        new State("NC", "North Carolina"),
+        new State("ND", "North Dakota"),
+        new State("OH", "Ohio"),
+        new State("OK", "Oklahoma"),
+        new State("OR", "Oregon"),
+        new State("PA", "Pennsylvania"),
+        new State("RI", "Rhode Island"),
+        new State("SC", "South Carolina"),
+        new State("SD", "South Dakota"),
+        new State("TN", "Tennessee"),
+        new State("TX", "Texas"),
+        new State("UT", "Utah"),
+        new State("VT", "Vermont"),
+        new State("VA", "Virginia"),
+        new State("WA", "Washington"),
+        new State("WV", "West Virginia"),
+        new State("WI", "Wisconsin"),
+        new State("WY", "Wyoming")
+      };
     }
   }
 }
