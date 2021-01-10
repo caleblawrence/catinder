@@ -36,7 +36,7 @@ namespace catinder.Services
             
             // wait for all cat data to come in (without this it doesn't work
             await page.WaitForSelectorAsync("div.pet__item");
-            const string jsSelectAllAnchors = @"Array.from(document.querySelectorAll('.pet__item')).map(a => a.innerHTML);";
+            const string jsSelectAllAnchors = @"Array.from(document.querySelectorAll('.search__result')).map(a => a.innerHTML);";
             var urls = await page.EvaluateExpressionAsync<string[]>(jsSelectAllAnchors);
             _logger.LogInformation($"Length: {urls.Count()}");
             foreach (var item in urls)
@@ -53,12 +53,13 @@ namespace catinder.Services
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(html);
             var htmlNodes = htmlDoc.DocumentNode.Descendants().ToList();
-            
-            var catImage = htmlNodes[1].OuterHtml;
-            var catName = htmlNodes[7].InnerText.Trim();
-            var catAge = htmlNodes[15].InnerText.Trim();
 
-            var cat = new Cat {Age = catAge, Image = catImage, Name = catName};
+            var catLink = "https://www.adoptapet.com" + htmlNodes[2].GetAttributeValue("href", "href");
+            var catImage = htmlNodes[4].GetAttributeValue("src", "src");
+            var catName = htmlNodes[9].InnerText.Trim();
+            var catAge = htmlNodes[18].InnerText.Trim();
+
+            var cat = new Cat {Age = catAge, Image = catImage, Name = catName, Link = catLink};
             return cat;
         }
     }
