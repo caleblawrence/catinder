@@ -5,6 +5,7 @@ project.lock.json
 *.pyc
 nupkg/
 
+.local-chromium
 .azure
 
 # Visual Studio Code
