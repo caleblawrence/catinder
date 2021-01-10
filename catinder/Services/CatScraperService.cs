@@ -21,17 +21,11 @@ namespace catinder.Services
         public async Task<List<Cat>> ScrapePage(string url)
         {
             var cats = new List<Cat>();
-            
-           
-            
-            
-            var options = new LaunchOptions {Headless = true};
-            _logger.LogInformation("Downloading chromium");
+
             await new BrowserFetcher().DownloadAsync(BrowserFetcher.DefaultRevision);
             _logger.LogInformation($"Navigating to {url}");
-
-            // await using var browser = await Puppeteer.LaunchAsync(options);
-            await using var browser = await Puppeteer.ConnectAsync(new ConnectOptions() {BrowserURL = "wss://chrome.browserless.io/"});
+            
+            await using var browser = await Puppeteer.ConnectAsync(new ConnectOptions {BrowserURL = "wss://chrome.browserless.io/"});
 
             await using var page = await browser.NewPageAsync();
             await page.GoToAsync(url);

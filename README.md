@@ -13,7 +13,7 @@ Navigate to `http://localhost:5000/swagger/index.html` to get to the Swagger end
 ### Deploy to Azure (free)
 Run this command after creating an Azure account (and installing the azure commandline tools and run `az login`) and it'll put this app into azure for free. Run the same command to update the app after you have made some changes.
 ```
-az webapp up --sku F1 --name test-app-caleb --os-type linux
+az webapp up --sku F1 --name catinder-api --os-type linux
 ```
 
 If your app uses a database (which it needs for authentication) you'll need to host the db somewhere and setup the connection string in the appsettings files. See below for free postgres hosting.
