@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace JWTAuthenticationWithSwagger.Migrations
+namespace catinder.Migrations
 {
     public partial class InitialCreate : Migration
     {

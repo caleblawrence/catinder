@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace JWTAuthenticationWithSwagger.Entities
+namespace catinder.Entities
 {
     public class Blog
     {

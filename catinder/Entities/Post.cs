@@ -1,4 +1,4 @@
-namespace JWTAuthenticationWithSwagger.Entities
+namespace catinder.Entities
 {
     public class Post
     {

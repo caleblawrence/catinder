@@ -1,4 +1,4 @@
-﻿namespace JWTAuthenticationWithSwagger.Models
+﻿namespace catinder.Models
 {
     public class Response
     {

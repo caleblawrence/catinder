@@ -1,5 +1,4 @@
-﻿using JWTAuthenticationWithSwagger.Authentication;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -10,9 +9,10 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using JWTAuthenticationWithSwagger.Models;
+using catinder.Authentication;
+using catinder.Models;
 
-namespace JWTAuthenticationWithSwagger.Controllers
+namespace catinder.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

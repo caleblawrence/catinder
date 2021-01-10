@@ -1,6 +1,6 @@
 using System;
 
-namespace JWTAuthenticationWithSwagger
+namespace catinder
 {
     public class WeatherForecast
     {

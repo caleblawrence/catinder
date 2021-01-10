@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using JWTAuthenticationWithSwagger.Entities;
-using JWTAuthenticationWithSwagger.Models;
+using catinder.Entities;
+using catinder.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace JWTAuthenticationWithSwagger
+namespace catinder
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

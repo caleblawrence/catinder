@@ -9,9 +9,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-using JWTAuthenticationWithSwagger.Models;
+using catinder.Models;
+using catinder.Services;
 
-namespace JWTAuthenticationWithSwagger
+namespace catinder
 {
     public class Startup
     {
@@ -35,6 +36,11 @@ namespace JWTAuthenticationWithSwagger
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            
+            // DI stuff
+            services.AddScoped<ICatScraperService, CatScraperService>();
+
+            
             // Adding Authentication
             services.AddAuthentication(options =>
             {
@@ -104,7 +110,7 @@ namespace JWTAuthenticationWithSwagger
             }
 
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ASP.NET 5 Web API v1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Catinder API"));
 
             app.UseHttpsRedirection();
 

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace JWTAuthenticationWithSwagger.Models
+namespace catinder.Models
 {
     public class ApplicationUser : IdentityUser
     {
