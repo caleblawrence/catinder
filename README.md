@@ -1,7 +1,9 @@
-# dotnet-api-starter
-This is a somewhat opinionated template I use to quickstart a Dotnet 5 API with auth (individual user auth using JWTs). It's setup using Postgres but can be easily swapped with another db. It contains a couple example db tables and an example endpoint (WeatherForecast) that is behind auth.
+# catinder-api
+This is an API that provides an endpoint for getting a list of cats in a certain city. It uses https://www.adoptapet.com/ for it's data.
 
-If you clone it, setup a database, update connection strings in the appsettings files, you will end up with a fully functioning Dotnet 5 web api with auth already taken care of (sign up and login routes are done already).
+https://catinder-api.azurewebsites.net/swagger/index.html
+
+### running it locally
 
 When you clone it you can cd into the actual solution and run this to start it locally.
 ```
