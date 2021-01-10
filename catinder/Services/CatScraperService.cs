@@ -1,13 +1,9 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using catinder.Models;
 using HtmlAgilityPack;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using PuppeteerSharp;
 
 
@@ -34,21 +30,24 @@ namespace catinder.Services
             await using var page = await browser.NewPageAsync();
             await page.GoToAsync(url);
             
-            // wait for all cat data to come in (without this it doesn't work
+            // wait for all cat data to come in
             await page.WaitForSelectorAsync("div.pet__item");
+            
+            // this snatches up all the divs that have cat data in them
             const string jsSelectAllAnchors = @"Array.from(document.querySelectorAll('.search__result')).map(a => a.innerHTML);";
-            var urls = await page.EvaluateExpressionAsync<string[]>(jsSelectAllAnchors);
+            var catsData = await page.EvaluateExpressionAsync<string[]>(jsSelectAllAnchors);
 
-            foreach (var item in urls)
+            foreach (var rawCatData in catsData)
             {
-                var newCat = ParseHtml("<div>" + item + "</div>");
+                // wrapping the HTML in a div so I can use .descendents on it later
+                var newCat = PullCatDataFromHtml("<div>" + rawCatData + "</div>");
                 cats.Add(newCat);
             }
 
             return cats;
         }
         
-        private Cat ParseHtml(string html)
+        private Cat PullCatDataFromHtml(string html)
         {
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(html);
